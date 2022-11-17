@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#constants"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -14,10 +17,28 @@
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.total_war_script",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.total_war_script",
+					"match": "\\b(if|end_if|monitor_event|end_monitor|terminate_monitor|for_each|end_for|in)\\b"
+				},
+				{
+					"name": "keyword.other.total_war_script",
+					"match": "\\blocal|script|end_script\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.total_war_script",
+					"match": "\\b(and|not)\\b"
+				},
+				{
+					"name": "constant.numeric.total_war_script",
+					"match": "\\b\\d+\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.total_war_script",
