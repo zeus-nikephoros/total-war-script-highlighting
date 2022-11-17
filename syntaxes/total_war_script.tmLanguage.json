@@ -21,6 +21,9 @@
       "include": "#conditions"
     },
     {
+      "include": "#keywords_other"
+    },
+    {
       "include": "#strings"
     },
     {
@@ -64,6 +67,10 @@
           "match": "\\b(declare_counter|declare_persistent_counter|inc_counter|set_counter|store_counter|retrieve_counter)\\b"
         }
       ]
+    },
+    "keywords_other": {
+      "name": "constant.language.total_war_script",
+      "match": "\\b(settlement|faction|character|world|unit|exp|armor|general|named character|character|command|influence|management|subterfuge|age|weapon_lvl)\\b"
     },
     "console_commands": {
       "name": "entity.name.function.total_war_script",
