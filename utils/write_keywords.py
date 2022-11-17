@@ -1,7 +1,7 @@
 import json
 
-keywordsFilePath = "utils\\events.json"
-keywordsID = "events"
+keywordsID = "conditions"
+keywordsFilePath = f"utils\\{keywordsID}.json"
 
 syntaxDefinitionFilePath = "syntaxes\\total_war_script.tmLanguage.json"
 
