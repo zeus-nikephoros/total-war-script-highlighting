@@ -1,0 +1,25 @@
+{
+  "name": "total-war-script-highlighting",
+  "displayName": "Total War Script Highlighting",
+  "description": "Highlighting support for the scripting language/data format used in the classic games from the Total War genre.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "total_war_script",
+      "aliases": ["Total War Script", "total_war_script"],
+      "extensions": [".txt"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "total_war_script",
+      "scopeName": "source.total_war_script",
+      "path": "./syntaxes/total_war_script.tmLanguage.json"
+    }]
+  }
+}
