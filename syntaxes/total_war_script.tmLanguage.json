@@ -7,6 +7,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -26,6 +29,11 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comments": {
+			"name": "comment.line.total_war_script",
+			"begin": ";",
+			"end": "\\n"
 		}
 	},
 	"scopeName": "source.total_war_script"
