@@ -9,6 +9,9 @@
 			"include": "#constants"
 		},
 		{
+			"include": "#functions"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -37,6 +40,19 @@
 				{
 					"name": "constant.numeric.total_war_script",
 					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.total_war_script",
+					"match": "\\bconsole_command\\b"
+				},
+				{
+					"comment": "Functions relating to counters",
+					"name": "entity.name.function.total_war_script",
+					"match": "\\b(declare_counter|declare_persistent_counter|inc_counter|set_counter|store_counter|retrieve_counter)\\b"
 				}
 			]
 		},
