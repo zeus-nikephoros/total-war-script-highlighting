@@ -15,7 +15,8 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"]
+        ["'", "'"],
+        { "open": "if", "close": "\n\nend_if", "notIn": ["string", "comment"] },
     ],
     // symbols that can be used to surround a selection
     "surroundingPairs": [
@@ -24,5 +25,15 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    "folding": {
+        "if": {
+          "start": "^\\s*//\\s*#?if\\b",
+          "end": "^\\s*//\\s*#?end_if\\b"
+        },
+        "monitor": {
+            "start": "^\\s*//\\s*#?monitor_event\\b",
+            "end": "^\\s*//\\s*#?end_monitor\\b"
+        }
+    }
 }
