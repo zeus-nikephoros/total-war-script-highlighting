@@ -5,7 +5,8 @@ files = [
     "console_commands.json", 
     "events.json",
     "keywords.json", 
-    "keywords_other.json" 
+    "keywords_other.json",
+    "commands.json" 
 ]
 
 for fileName in files:
