@@ -1,0 +1,31 @@
+{
+    "strat_keywords": [
+        "campaign",
+        "options",
+        "playable",
+        "unlockable",
+        "nonplayable",
+        "end",
+        "start_date",
+        "end_date",
+        "brigand_spawn_value",
+        "pirate_spawn_value",
+        "landmark",
+        "resource",
+        "faction",
+        "denari",
+        "character",
+        "traits",
+        "ancillaries",
+        "army",
+        "character_record",
+        "relative",
+        "ai_do_not_attack_faction",
+        "super_faction",
+        "sub_faction",
+        "core_attitudes",
+        "faction_relationships",
+        "faction_agression",
+        "spawn_script"
+    ]
+}

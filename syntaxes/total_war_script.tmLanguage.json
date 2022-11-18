@@ -6,6 +6,9 @@
       "include": "#script"
     },
     {
+      "include": "#strat"
+    },
+    {
       "include": "#constants"
     },
     {
@@ -25,11 +28,50 @@
     }
   ],
   "repository": {
+    "strat": {
+      "comment": "This is a rule group that only applies between after the campaign keyword. Used for descr_strat.txt",
+      "name": "descr_strat.total_war_script",
+      "begin": "(\\bcampaign\\b)",
+      "end": "(\\bscript\\b)|(;#script)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.total_war_script"
+        }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "keyword.control.total_war_script"
+        },
+        "2": {
+          "name": "comment.line.total_war_script"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#strat_keywords"
+        },
+        {
+          "include": "#strat_properties"
+        },
+        {
+          "include": "#strat_keywords_other"
+        }
+      ]
+    },
     "script": {
       "comment": "This is a rule group that only applies between script and end_script words. It holds all rules relating to scripting.",
       "name": "scripting.total_war_script",
-      "begin": "(script)",
-      "end": "(\\s|\\S)(end_script)",
+      "begin": "(\\bscript\\b)",
+      "end": "(\\bend_script\\b)",
       "captures": {
         "1": {
           "name": "keyword.control.total_war_script"
@@ -132,6 +174,18 @@
     "conditions": {
       "name": "entity.name.variable.total_war_script",
       "match": "\\b(HasResource|I_InBattle|WonBattle|I_WonBattle|Routs|Ally_Routs|GeneralHPLostRatioinBattle|GeneralNumKillsInBattle|GeneralFoughtInCombat|PercentageOfArmyKilled|I_PercentageOfArmyKilled|PercentageEnemyKilled|PercentageBodyguardKilled|PercentageRoutedOffField|NumKilledGenerals|PercentageUnitCategory|NumFriendsInBattle|NumEnemiesInBattle|GeneralFoughtFaction|GeneralFoughtCulture|I_ConflictType|IsNightBattle|BattleSuccess|BattleOdds|WasAttacker|I_BattleAiAttacking|I_BattleAiAttackingSettlement|I_BattleAiDefendingSettlement|I_BattleAiDefendingHill|I_BattleAiDefendingCrossing|I_BattleAiScouting|I_BattleIsRiverBattle|I_BattleIsSiegeBattle|I_BattleIsSallyOutBattle|I_BattleIsFortBattle|I_BattleAttackerNumSiegeEngines|I_BattleAttackerNumArtilleryCanPenetrateWalls|I_BattleDefenderNumNonMissileUnitsOnWalls|I_BattleDefenderNumMissileUnitsOnWalls|I_BattleSettlementWallsBreached|I_BattleSettlementGateDestroyed|I_BattleSettlementTowerDefence|I_BattleSettlementGateDefence|I_BattleSettlementFortificationLevel|BattleBuildingType|I_BattleSettlementGateStrength|I_BattleNumberOfRiverCrossings|BattlePlayerUnitClass|BattleEnemyUnitClass|BattlePlayerUnitCategory|BattleEnemyUnitCategory|BattlePlayerUnitSiegeEngineClass|BattleEnemyUnitSiegeEngineClass|BattlePlayerUnitOnWalls|BattleEnemyUnitOnWalls|BattlePlayerCurrentFormation|BattleEnemyCurrentFormation|BattlePlayerUnitCloseFormation|BattleEnemyUnitCloseFormation|BattlePlayerUnitSpecialAbilitySupported|BattleEnemyUnitSpecialAbilitySupported|BattlePlayerUnitSpecialAbilityActive|BattleEnemyUnitSpecialAbilityActive|BattlePlayerMountClass|BattleEnemyMountClass|BattlePlayerUnitMeleeStrength|BattleEnemyUnitMeleeStrength|BattlePlayerUnitMissileStrength|BattleEnemyUnitMissileStrength|BattlePlayerUnitSpecialFormation|BattleEnemyUnitSpecialFormation|BattlePlayerUnitEngaged|BattleEnemyUnitEngaged|BattlePlayerActionStatus|BattleEnemyActionStatus|BattlePlayerUnitMovingFast|BattleEnemyUnitMovingFast|BattleRangeOfAttack|BattleDirectionOfAttack|BattleIsMeleeAttack|I_BattlePlayerArmyPercentageOfUnitClass|I_BattleEnemyArmyPercentageOfUnitClass|I_BattlePlayerArmyPercentageOfUnitCategory|I_BattleEnemyArmyPercentageOfUnitCategory|I_BattlePlayerArmyPercentageOfMountClass|I_BattleEnemyArmyPercentageOfMountClass|I_BattlePlayerArmyPercentageOfClassAndCategory|I_BattleEnemyArmyPercentageOfClassAndCategory|I_BattlePlayerArmyPercentageOfSpecialAbility|I_BattleEnemyArmyPercentageOfSpecialAbility|I_BattlePlayerArmyPercentageCanHide|I_BattleEnemyArmyPercentageCanHide|I_BattlePlayerArmyPercentageCanSwim|I_BattleEnemyArmyPercentageCanSwim|I_BattlePlayerArmyIsAttacker|I_BattlePlayerAllianceOddsInFavour|I_BattlePlayerAllianceOddsAgainst|TotalSiegeWeapons|I_BattleStarted|I_IsUnitMoveFastSet|I_IsUnitMoving|I_IsUnitIdle|I_IsUnitRouting|I_IsUnitUnderFire|I_IsUnitEngaged|I_IsUnitEngagedWithUnit|I_UnitFormation|I_PercentageUnitKilled|I_UnitPercentageAmmoLeft|I_UnitDistanceFromPosition|I_UnitDistanceFromLine|I_UnitDistanceFromUnit|I_UnitInRangeOfUnit|I_UnitDestroyed|I_UnitEnemyUnitInRadius|I_IsUnitGroupMoving|I_IsUnitGroupEngaged|I_IsUnitGroupIdle|I_IsUnitGroupDestroyed|I_PercentageUnitGroupKilled|I_UnitGroupFormation|I_UnitGroupDistanceFromPosition|I_UnitGroupDistanceFromGroup|I_UnitGroupInRangeOfUnit|I_UnitInRangeOfUnitGroup|I_UnitGroupInRangeOfUnitGroup|I_PlayerInRangeOfUnitGroup|I_PlayerInRangeOfUnit|I_UnitTypeSelected|UnitType|I_UnitSelected|I_MultipleUnitsSelected|I_SpecificUnitsSelected|I_IsCameraZoomingToUnit|I_BattleEnemyArmyPercentageOfMatchingUnits|I_BattleEnemyArmyNumberOfMatchingUnits|I_BattlePlayerArmyPercentageOfMatchingUnits|I_BattlePlayerArmyNumberOfMatchingUnits|Trait|FatherTrait|FactionLeaderTrait|Attribute|RemainingMPPercentage|I_RemainingMPPercentage|I_CharacterCanMove|NoActionThisTurn|AgentType|TrainedAgentType|DisasterType|CultureType|OriginalFactionType|OriginalCultureType|IsGeneral|IsAdmiral|EndedInSettlement|IsFactionLeader|IsFactionHeir|IsMarried|AtSea|InEnemyLands|InBarbarianLands|InUncivilisedLands|IsBesieging|IsUnderSiege|I_WithdrawsBeforeBattle|EndedInEnemyZOC|AdviseAction|I_CharacterTypeNearCharacterType|I_CharacterTypeNearTile|FactionType|TargetFactionType|FactionCultureType|TargetFactionCultureType|TrainedUnitCategory|UnitCategory|SenateMissionTimeRemaining|MedianTaxLevel|ModeTaxLevel|I_ModeTaxLevel|MissionSuccessLevel|MissionSucceeded|MissionFactionTargetType|MissionCultureTargetType|DiplomaticStanceFromCharacter|DiplomaticStanceFromFaction|FactionHasAllies|LosingMoney|I_LosingMoney|SupportCostsPercentage|Treasury|OnAWarFooting|I_FactionBesieging|I_FactionBesieged|I_NumberOfSettlements|I_NumberOfHeirs|I_FactionNearTile|SettlementsTaken|BattlesFought|BattlesWon|BattlesLost|DefensiveSiegesFought|DefensiveSiegesWon|OffensiveSiegesFought|OffensiveSiegesWon|FactionwideAncillaryExists|RandomPercent|TrueCondition|WorldwideAncillaryExists|SettlementName|GovernorBuildingExists|SettlementBuildingExists|BuildingFinishedByGovernor|SettlementBuildingFinished|GovernorPlugInExists|GovernorPlugInFinished|GovernorTaxLevel|SettlementTaxLevel|GovernorInResidence|GovernorLoyaltyLevel|SettlementLoyaltyLevel|RiotRisk|BuildingQueueIdleDespiteCash|TrainingQueueIdleDespiteCash|I_SettlementExists|I_SettlementOwner|AdviseFinancialBuild|AdviseBuild|AdviseRecruit|SettlementPopulationMaxedOut|SettlementPopulationTooLow|SettlementAutoManaged|PercentageOfPopulationInGarrison|GarrisonToPopulationRatio|HealthPercentage|SettlementHasPlague|IsFortGarrisoned|IsSettlementGarrisoned|IsSettlementRioting|I_NumberUnitsInSettlement|CharacterIsLocal|TargetCharacterIsLocal|SettlementIsLocal|TargetSettlementIsLocal|RegionIsLocal|TargetRegionIsLocal|ArmyIsLocal|TargetArmyIsLocal|FactionIsLocal|I_LocalFaction|TargetFactionIsLocal|I_TurnNumber|I_MapName|I_ThreadCount|I_IsTriggerTrue|IncomingMessageType|I_AdvisorVerbosity|I_AdvisorVisible|I_CharacterSelected|I_AgentSelected|I_SettlementSelected|ShortcutTriggered|I_AdvancedStatsScrollIsOpen|ButtonPressed|ScrollOpened|ScrollClosed|ScrollAdviceRequested|I_CompareCounter|I_TimerElapsed|I_SoundPlaying|I_AdvisorSpeechPlaying)\\b"
+    },
+    "strat_keywords": {
+      "name": "keyword.control.total_war_script",
+      "match": "\\b(campaign|options|playable|unlockable|nonplayable|end|start_date|end_date|brigand_spawn_value|pirate_spawn_value|landmark|resource|faction|denari|character|traits|ancillaries|army|character_record|relative|ai_do_not_attack_faction|super_faction|sub_faction|core_attitudes|faction_relationships|faction_agression|spawn_script)\\b"
+    },
+    "strat_properties": {
+      "name": "entity.name.variable.total_war_script",
+      "match": "\\b(imperial_campaign|summer|winter|level|region|year_founded|population|settlement_tax|plan_set|faction_creator|type|named character|named_character|leader|heir|age|x|y|unit|exp|armour|weapon_lvl|male|female|command|influence|management|subterfuge|dead|alive|past_leader|never_a_leader|general|admiral|diplomat|spy|assassin|merchant)\\b"
+    },
+    "strat_keywords_other": {
+      "name": "keyword.other.total_war_script",
+      "match": "\\b(building|settlement)\\b"
     },
     "strings": {
       "name": "string.quoted.double.total_war_script",

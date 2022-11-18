@@ -10,7 +10,10 @@ files = [
     "script_variables.json",
     "script_functions.json",
     "edb_tags.json",
-    "edb_requirements.json" 
+    "edb_requirements.json",
+    "strat_keywords.json",
+    "strat_properties.json",
+    "strat_keywords_other.json" 
 ]
 
 for fileName in files:
