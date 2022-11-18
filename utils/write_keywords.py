@@ -7,7 +7,9 @@ files = [
     "keywords.json", 
     "keywords_other.json",
     "commands.json",
-    "script_variables.json" 
+    "script_variables.json",
+    "edb_tags.json",
+    "edb_requirements.json" 
 ]
 
 for fileName in files:

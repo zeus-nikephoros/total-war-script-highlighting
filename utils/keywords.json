@@ -2,7 +2,6 @@
     "keywords": [
         "script",
         "end_script",
-        "local",
         "if",
         "end_if",
         "monitor_event",
@@ -12,6 +11,10 @@
         "in",
         "end_for",
         "spawn_army",
-        "end"
+        "end",
+        "script_log",
+        "include_script",
+        "terminate_script",
+        "break"
     ]
 }
