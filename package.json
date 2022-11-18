@@ -4,6 +4,12 @@
   "description": "Highlighting support for the scripting language/data format used in Rome Total War",
   "publisher": "RenatoPereira",
   "version": "0.0.1",
+  "icon": "icon.png",
+  "galleryBanner.color": "00617E",
+  "pricing": "Free",
+  "repository": {
+    "url": "https://github.com/zeus-nikephoros/total-war-script-highlighting"    
+  },
   "engines": {
     "vscode": "^1.73.0"
   },
