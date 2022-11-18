@@ -1,7 +1,8 @@
 {
   "name": "total-war-script-highlighting",
   "displayName": "Total War Script Highlighting",
-  "description": "Highlighting support for the scripting language/data format used in the classic games from the Total War genre.",
+  "description": "Highlighting support for the scripting language/data format used in Rome Total War",
+  "publisher": "RenatoPereira",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.73.0"
