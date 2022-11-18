@@ -32,22 +32,14 @@
   ],
   "repository": {
     "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.total_war_script",
-          "match": "\\b(if|end_if|monitor_event|end_monitor|terminate_monitor|for_each|end_for|in)\\b"
-        },
-        {
-          "name": "keyword.other.total_war_script",
-          "match": "\\blocal|script|end_script\\b"
-        }
-      ]
+      "name": "keyword.control.total_war_script",
+      "match": "\\b(script|end_script|local|if|end_if|monitor_event|end_monitor|terminate_monitor|for_each|in|end_for|spawn_army|end)\\b"
     },
     "constants": {
       "patterns": [
         {
           "name": "constant.language.total_war_script",
-          "match": "\\b(and|not)\\b"
+          "match": "\\b(and|or|not)\\b"
         },
         {
           "name": "constant.numeric.total_war_script",
@@ -69,8 +61,8 @@
       ]
     },
     "keywords_other": {
-      "name": "constant.language.total_war_script",
-      "match": "\\b(settlement|faction|character|world|unit|exp|armor|general|named character|character|command|influence|management|subterfuge|age|weapon_lvl)\\b"
+      "name": "keyword.other.total_war_script",
+      "match": "\\b(settlement|faction|character|world|unit|exp|armour|general|named character|character|command|influence|management|subterfuge|age|weapon_lvl|x|y)\\b"
     },
     "console_commands": {
       "name": "entity.name.function.total_war_script",

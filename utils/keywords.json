@@ -1,0 +1,17 @@
+{
+    "keywords": [
+        "script",
+        "end_script",
+        "local",
+        "if",
+        "end_if",
+        "monitor_event",
+        "end_monitor",
+        "terminate_monitor",
+        "for_each",
+        "in",
+        "end_for",
+        "spawn_army",
+        "end"
+    ]
+}
