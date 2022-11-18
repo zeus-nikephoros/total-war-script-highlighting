@@ -1,29 +1,38 @@
 import json
 
-keywordsID = "conditions"
-keywordsFilePath = f"utils\\{keywordsID}.json"
+files = [ 
+    "conditions.json", 
+    "console_commands.json", 
+    "events.json",
+    "keywords.json", 
+    "keywords_other.json" 
+]
 
-syntaxDefinitionFilePath = "syntaxes\\total_war_script.tmLanguage.json"
+for fileName in files:
+    keywordsID = fileName.split(".")[0]
+    keywordsFilePath = f"utils\\{keywordsID}.json"
 
-keywords_file = open(keywordsFilePath)
-keywords_json = json.load(keywords_file)
-keywords_file.close()
+    syntaxDefinitionFilePath = "syntaxes\\total_war_script.tmLanguage.json"
 
-match = ""
-for idx, keyword in enumerate(keywords_json[keywordsID]):
-    if idx == 0:
-        match += keyword
-    else:
-        match += "|" + keyword
+    keywords_file = open(keywordsFilePath)
+    keywords_json = json.load(keywords_file)
+    keywords_file.close()
 
-match = "\\" + "b(" + match + ")" + "\\b"
+    match = ""
+    for idx, keyword in enumerate(keywords_json[keywordsID]):
+        if idx == 0:
+            match += keyword
+        else:
+            match += "|" + keyword
 
-syntaxFile = open(syntaxDefinitionFilePath)
-syntaxJson = json.load(syntaxFile)
-syntaxFile.close()
+    match = "\\" + "b(" + match + ")" + "\\b"
 
-syntaxFile = open(syntaxDefinitionFilePath, "w")
-if syntaxJson:
-    syntaxJson["repository"][keywordsID]["match"] = match
-    json.dump(syntaxJson, syntaxFile, indent = 2)
-syntaxFile.close()
+    syntaxFile = open(syntaxDefinitionFilePath)
+    syntaxJson = json.load(syntaxFile)
+    syntaxFile.close()
+
+    syntaxFile = open(syntaxDefinitionFilePath, "w")
+    if syntaxJson:
+        syntaxJson["repository"][keywordsID]["match"] = match
+        json.dump(syntaxJson, syntaxFile, indent = 2)
+    syntaxFile.close()
