@@ -1,0 +1,23 @@
+{
+    "edb_requirements": [
+        "resource",
+        "hidden_resource",
+        "building_present",
+        "queued",
+        "factionwide",
+        "building_present_min_level",
+        "major_event",
+        "factions",
+        "all",
+        "port",
+        "is_player",
+        "is_toggled",
+        "diplomacy",
+        "building_factions",
+        "capability",
+        "no_building_tagged",
+        "religion",
+        "majority_religion",
+        "official_religion"
+    ]
+}

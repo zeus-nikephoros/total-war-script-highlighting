@@ -1,0 +1,27 @@
+{
+    "edb_tags": [
+        "building",
+        "levels",
+        "capability",
+        "faction_capability",
+        "construction",
+        "cost",
+        "settlement_min",
+        "upgrades",
+        "requires",
+        "village",
+        "town",
+        "large_town",
+        "city",
+        "large_city",
+        "plugins",
+        "hidden_resources",
+        "building_min",
+        "classification",
+        "icon",
+        "ai_destruction_hint",
+        "tags",
+        "alias",
+        "display_string"
+    ]
+}
