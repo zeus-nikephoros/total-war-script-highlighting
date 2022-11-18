@@ -3,31 +3,10 @@
   "name": "Total War Script",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#script"
     },
     {
       "include": "#constants"
-    },
-    {
-      "include": "#functions"
-    },
-    {
-      "include": "#console_commands"
-    },
-    {
-      "include": "#events"
-    },
-    {
-      "include": "#conditions"
-    },
-    {
-      "include": "#keywords_other"
-    },
-    {
-      "include": "#commands"
-    },
-    {
-      "include": "#script_variables"
     },
     {
       "include": "#operators"
@@ -46,9 +25,61 @@
     }
   ],
   "repository": {
+    "script": {
+      "comment": "This is a rule group that only applies between script and end_script words. It holds all rules relating to scripting.",
+      "name": "scripting.total_war_script",
+      "begin": "(script)",
+      "end": "(\\s|\\S)(end_script)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.total_war_script"
+        },
+        "3": {
+          "name": "keyword.control.total_war_script"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#keywords_other"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#constants"
+        },
+        {
+          "include": "#script_functions"
+        },
+        {
+          "include": "#script_variables"
+        },
+        {
+          "include": "#console_commands"
+        },
+        {
+          "include": "#events"
+        },
+        {
+          "include": "#conditions"
+        },
+        {
+          "include": "#commands"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        }
+      ]
+    },
     "keywords": {
       "name": "keyword.control.total_war_script",
-      "match": "\\b(script|end_script|if|end_if|monitor_event|end_monitor|terminate_monitor|for_each|in|end_for|spawn_army|end|script_log|include_script|terminate_script|break)\\b"
+      "match": "\\b(script|end_script|if|end_if|monitor_event|end_monitor|terminate_monitor|for_each|in|end_for|spawn_army|end|script_log|include_script|terminate_script|break|console_command)\\b"
     },
     "constants": {
       "patterns": [
@@ -62,18 +93,9 @@
         }
       ]
     },
-    "functions": {
-      "patterns": [
-        {
-          "name": "entity.name.function.total_war_script",
-          "match": "\\bconsole_command\\b"
-        },
-        {
-          "comment": "Functions relating to counters",
-          "name": "entity.name.function.total_war_script",
-          "match": "\\b(declare_counter|declare_persistent_counter|inc_counter|set_counter|store_counter|retrieve_counter)\\b"
-        }
-      ]
+    "script_functions": {
+      "name": "entity.name.function.total_war_script",
+      "match": "\\b(declare_counter|declare_persistent_counter|inc_counter|set_counter|store_counter|retrieve_counter)\\b"
     },
     "edb_tags": {
       "name": "keyword.other.total_war_script",

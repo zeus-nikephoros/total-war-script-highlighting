@@ -1,0 +1,10 @@
+{
+    "script_functions": [
+        "declare_counter",
+        "declare_persistent_counter",
+        "inc_counter",
+        "set_counter",
+        "store_counter",
+        "retrieve_counter"
+    ]
+}

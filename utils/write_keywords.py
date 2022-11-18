@@ -8,6 +8,7 @@ files = [
     "keywords_other.json",
     "commands.json",
     "script_variables.json",
+    "script_functions.json",
     "edb_tags.json",
     "edb_requirements.json" 
 ]

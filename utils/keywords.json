@@ -15,6 +15,7 @@
         "script_log",
         "include_script",
         "terminate_script",
-        "break"
+        "break",
+        "console_command"
     ]
 }
