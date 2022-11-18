@@ -1,0 +1,9 @@
+{
+    "script_variables": [
+        "flag_counter",
+        "result_counter",
+        "title",
+        "body",
+        "image"
+    ]
+}
